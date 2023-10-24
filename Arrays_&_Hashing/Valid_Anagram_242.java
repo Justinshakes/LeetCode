@@ -59,5 +59,5 @@ public class Valid_Anagram_242 {
         String t3 = "silent";
         System.out.println("Is '" + s3 + "' an anagram of '" + t3 + "'? " + isAnagram(s3, t3)); // Should print true
     }
-    
+
 }
