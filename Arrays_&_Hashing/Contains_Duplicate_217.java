@@ -18,7 +18,7 @@ public class Contains_Duplicate_217 {
 //    }
 
     public boolean containsDuplicate(int[] nums) {
-        Set<Integer> uniques = new HashSet<>();
+        HashSet<Integer> uniques = new HashSet<>();
         for (int i : nums) {
             if (uniques.contains(i))
                 return true;
