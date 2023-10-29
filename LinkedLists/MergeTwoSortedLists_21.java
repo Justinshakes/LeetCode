@@ -4,7 +4,8 @@ public class MergeTwoSortedLists_21 {
         int val;
         ListNode next;
 
-        public ListNode() {}
+        public ListNode() {
+        }
 
         public ListNode(int val) {
             this.val = val;
@@ -31,11 +32,10 @@ public class MergeTwoSortedLists_21 {
             current = current.next;
         }
 
-        if (l1 != null) {
-            current.next = l1;
-        } else {
+        if (l1 == null)
             current.next = l2;
-        }
+        else
+            current.next = l1;
 
         return dummyHead.next;
     }
