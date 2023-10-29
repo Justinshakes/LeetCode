@@ -1,14 +1,21 @@
+import java.util.HashMap;
 import java.util.HashSet;
 
 public class practice {
 
-    public boolean containsDuplicate(int[] nums) {
-        HashSet<Integer> uniques = new HashSet<>();
-        for(int i : nums) {
-            if (uniques.contains(i))
-                return true;
-            uniques.add(i);
+    public static int[] twoSum(int[] nums, int target) {
+        HashMap<Integer, Integer> map = new HashMap<>();
+
+        for (int i = 0; i < nums.length; i++) {
+            int num = nums[i];
+            int diff = target - num;
+
+            if (map.containsKey(diff))
+                return new int[]{map.get(diff), i};
+
+            map.put(num, i);
         }
-        return false;
+
+        return null;
     }
 }
