@@ -1,21 +1,21 @@
-import java.util.HashMap;
-import java.util.HashSet;
+import java.util.*;
 
 public class practice {
 
-    public static int[] twoSum(int[] nums, int target) {
-        HashMap<Integer, Integer> map = new HashMap<>();
+    public static List<List<String>> groupAnagrams(String[] strs) {
+        HashMap<String, List<String>> map = new HashMap<>();
 
-        for (int i = 0; i < nums.length; i++) {
-            int num = nums[i];
-            int diff = target - num;
+        for (String word : strs) {
+            char[] chars = word.toCharArray();
 
-            if (map.containsKey(diff))
-                return new int[]{map.get(diff), i};
+            Arrays.sort(chars);
+            String sortedWord = new String(chars);
 
-            map.put(num, i);
+            if (!map.containsKey(sortedWord))
+                map.put(sortedWord, new ArrayList<>());
+
+            map.get(sortedWord).add(word);
         }
-
-        return null;
+        return new ArrayList<>(map.values());
     }
 }

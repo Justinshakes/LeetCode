@@ -3,7 +3,7 @@ import java.util.*;
 // Last Practiced: Oct 29th 2023
 public class Group_Anagrams_49 {
     public static List<List<String>> groupAnagrams(String[] strs) {
-        HashMap<String, List<String>> map = new HashMap<>();
+        HashMap<String, ArrayList<String>> map = new HashMap<>();
 
         for (String word : strs) {
             char[] chars = word.toCharArray();
