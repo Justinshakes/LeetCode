@@ -1,6 +1,8 @@
 import java.util.Arrays;
 import java.util.HashMap;
 
+// Last Practiced: Oct 29th 2023
+
 public class Valid_Anagram_242 {
 
 //    public static boolean isAnagram(String s, String t) {
