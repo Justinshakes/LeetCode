@@ -11,4 +11,22 @@ public class practice {
 //        }
 //        return false;
 //    }
+
+    public static boolean containsDuplicate(int[] nums) {
+        HashMap<Integer, Integer> map = new HashMap<>();
+
+        for (int num : nums)
+            map.merge(num, 1, Integer::sum);
+
+        for(int i : nums) {
+            if(map.get(i) > 1)
+                return true;
+        }
+        return false;
+    }
+
+    public static void main(String[] args) {
+        int[] nums1 = {1, 2, 3, 1};
+        System.out.println("Contains duplicate in nums1? " + containsDuplicate(nums1)); // Should print true
+    }
 }

@@ -7,10 +7,8 @@ public class Contains_Duplicate_217 {
     public static boolean containsDuplicate(int[] nums) {
         HashMap<Integer, Integer> map = new HashMap<>();
 
-        for(int i : nums) {
-            int count = map.getOrDefault(i, 0);
-            map.put(i, count + 1);
-        }
+        for (int num : nums)
+            map.merge(num, 1, Integer::sum);
 
         for(int i : nums) {
             if(map.get(i) > 1)
