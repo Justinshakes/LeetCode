@@ -2,20 +2,22 @@ import java.util.*;
 
 public class practice {
 
-    public static List<List<String>> groupAnagrams(String[] strs) {
-        HashMap<String, List<String>> map = new HashMap<>();
+    public static int[] twoSum(int[] nums, int target) {
+        HashMap<Integer, Integer> map = new HashMap<>();
 
-        for (String word : strs) {
-            char[] chars = word.toCharArray();
+        for(int i = 0; i < nums.length; i++) {
+            int num = nums[i];
+            int diff = target - num;
 
-            Arrays.sort(chars);
-            String sortedWord = new String(chars);
+            if(map.containsKey(diff))
+                return new int[]{map.get(diff), i};
 
-            if (!map.containsKey(sortedWord))
-                map.put(sortedWord, new ArrayList<>());
-
-            map.get(sortedWord).add(word);
+            map.put(num, i);
         }
-        return new ArrayList<>(map.values());
+        return null;
+
+    }
+    public static void main(String[] args) {
+
     }
 }
