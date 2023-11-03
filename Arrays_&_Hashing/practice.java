@@ -2,31 +2,21 @@ import java.util.*;
 
 public class practice {
 
-//    public static boolean containsDuplicate(int[] nums) {
-//        HashSet<Integer> uniques = new HashSet<>();
-//        for(int i : nums) {
-//            if(uniques.contains(i))
-//                return true;
-//            uniques.add(i);
-//        }
-//        return false;
-//    }
-
-    public static boolean containsDuplicate(int[] nums) {
+    public static int[] twoSum(int[] nums, int target) {
         HashMap<Integer, Integer> map = new HashMap<>();
 
-        for (int num : nums)
-            map.merge(num, 1, Integer::sum);
+        for(int i = 0; i < nums.length; i++) {
+            int num = nums[i];
+            int diff = target - num;
 
-        for(int i : nums) {
-            if(map.get(i) > 1)
-                return true;
+            if(map.containsKey(diff))
+                return new int[]{map.get(diff), i};
+
+            map.put(num, i);
         }
-        return false;
-    }
 
+    }
     public static void main(String[] args) {
-        int[] nums1 = {1, 2, 3, 1};
-        System.out.println("Contains duplicate in nums1? " + containsDuplicate(nums1)); // Should print true
+
     }
 }

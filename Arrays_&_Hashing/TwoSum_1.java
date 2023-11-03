@@ -2,7 +2,24 @@ import java.util.Arrays;
 import java.util.HashMap;
 
 public class TwoSum_1 {
-// This one
+    
+    // Nov 2nd 2023
+
+    public static int[] twoSum(int[] nums, int target) {
+        HashMap<Integer, Integer> map = new HashMap<>();
+
+        for (int i = 0; i < nums.length; i++) {
+            int num = nums[i];
+            int diff = target - num;
+
+            if (map.containsKey(diff))
+                return new int[]{map.get(diff), i};
+
+            map.put(num, i);
+        }
+
+        return null;
+    }
 
     public static void main(String[] args) {
         int[] nums1 = {2, 1, 5, 3};
@@ -22,23 +39,6 @@ public class TwoSum_1 {
         System.out.println(Arrays.toString(twoSum(nums4, target4))); // Should print [0, 3]
     }
 
-
-
-    public static int[] twoSum(int[] nums, int target) {
-        HashMap<Integer, Integer> map = new HashMap<>();
-
-        for (int i = 0; i < nums.length; i++) {
-            int num = nums[i];
-            int diff = target - num;
-
-            if (map.containsKey(diff))
-                return new int[]{map.get(diff), i};
-
-            map.put(num, i);
-        }
-
-        return null;
-    }
 
 }
 
