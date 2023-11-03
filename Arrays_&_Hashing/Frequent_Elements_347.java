@@ -22,8 +22,6 @@ public class Frequent_Elements_347 {
             bucket[freq].add(key);
         }
 
-        System.out.println(Arrays.toString(bucket));
-
         int index = 0;
         int[] res = new int[k];
         for (int i = nums.length; i >= 0; i--)
