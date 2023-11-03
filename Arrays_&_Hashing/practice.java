@@ -14,6 +14,7 @@ public class practice {
 
             map.put(num, i);
         }
+        return null;
 
     }
     public static void main(String[] args) {

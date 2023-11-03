@@ -2,7 +2,7 @@ import java.util.Arrays;
 import java.util.HashMap;
 
 public class TwoSum_1 {
-    
+
     // Nov 2nd 2023
 
     public static int[] twoSum(int[] nums, int target) {
