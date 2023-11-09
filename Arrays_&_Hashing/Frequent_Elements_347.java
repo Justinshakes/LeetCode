@@ -1,6 +1,7 @@
 import java.util.*;
 
-// Last Practiced: Oct 29th 2023
+// Last Practiced: Nov 9th 2023
+// Need more practice
 
 public class Frequent_Elements_347 {
 
@@ -23,30 +24,30 @@ public class Frequent_Elements_347 {
         }
 
         int index = 0;
-        int[] res = new int[k];
-        for (int i = nums.length; i >= 0; i--)
+        int[] result = new int[k];
+        for (int i = nums.length; i >= 0; i--) {
             if (bucket[i] != null)
                 for (int val : bucket[i]) {
-                    res[index++] = val;
+                    result[index++] = val;
                     if (index == k)
-                        return res;
+                        return result;
                 }
-
-        return res;
+        }
+        return result;
     }
 
     public static void main(String[] args) {
         // Test Case 1
-//        int[] nums1 = {1, 1, 1, 2, 2, 3};
-//        int k1 = 2;
-//        int[] result1 = topKFrequent(nums1, k1);
-//        System.out.println(Arrays.toString(result1)); // Expected output: [1, 2]
+        int[] nums1 = {1, 1, 1, 2, 2, 3};
+        int k1 = 2;
+        int[] result1 = topKFrequent(nums1, k1);
+        System.out.println(Arrays.toString(result1)); // Expected output: [1, 2]
 
         // Test Case 2
-        int[] nums2 = {1, 1, 1, 2, 2, 3, 3, 3, 3};
-        int k2 = 2;
-        int[] result2 = topKFrequent(nums2, k2);
-        System.out.println(Arrays.toString(result2)); // Expected output: [3, 1]
+//        int[] nums2 = {1, 1, 1, 2, 2, 3, 3, 3, 3}
+//        int k2 = 2;
+//        int[] result2 = topKFrequent(nums2, k2);
+//        System.out.println(Arrays.toString(result2)); // Expected output: [3, 1]
 //
 //        // Test Case 3
 //        int[] nums3 = {4, 1, -1, 2, -1, 2, 3};
