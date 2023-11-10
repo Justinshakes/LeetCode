@@ -38,15 +38,6 @@ public class Invert_Binary_Tree_226 {
         return root;
     }
 
-//    public TreeNode invertTree(TreeNode root) {
-//        if (root == null) return null;
-//        TreeNode node = new TreeNode(root.val);
-//        node.right = invertTree(root.left);
-//        node.val = root.val;
-//        node.left = invertTree(root.right);
-//        return node;
-//    }
-
 
 
     public static void main(String[] args) {

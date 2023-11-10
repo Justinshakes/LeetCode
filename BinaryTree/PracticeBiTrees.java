@@ -30,6 +30,7 @@ public class PracticeBiTrees {
         TreeNode left = invertTree(root.left);
         TreeNode right = invertTree(root.right);
 
+        // swap
         root.right = left;
         root.left = right;
 
