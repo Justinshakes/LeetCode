@@ -1,7 +1,6 @@
 import java.util.*;
 
-// Last Practiced: Nov 9th 2023
-// Need more practice
+// Last Practiced: Nov 10th 2023
 
 public class Frequent_Elements_347 {
 
@@ -38,7 +37,7 @@ public class Frequent_Elements_347 {
 
     public static void main(String[] args) {
         // Test Case 1
-        int[] nums1 = {1, 1, 1, 2, 2, 3};
+        int[] nums1 = {1, 1, 1, 2, 2, 3, 1, 2};
         int k1 = 2;
         int[] result1 = topKFrequent(nums1, k1);
         System.out.println(Arrays.toString(result1)); // Expected output: [1, 2]
