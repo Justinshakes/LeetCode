@@ -1,6 +1,6 @@
 public class Invert_Binary_Tree_226 {
 
-    // Last practiced Oct 9th
+    // Last practiced Oct 11th
     public static class TreeNode {
         int val;
         TreeNode left;
