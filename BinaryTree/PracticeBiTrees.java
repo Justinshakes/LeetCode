@@ -23,20 +23,32 @@ public class PracticeBiTrees {
         }
     }
 
-    int result = -1;
+    public static boolean isBalanced(TreeNode root) {
+        // If the tree is empty, it is balanced and base case
+        if (root == null)
+            return true;
 
-    public int diameterOfBinaryTree(TreeNode root) {
-        dfs(root);
-        return result;
+        // Check the balance of the left and right subtrees
+        int leftHeight = getHeight(root.left);
+        int rightHeight = getHeight(root.right);
+
+        // If the difference in heights is more than 1, the tree is not balanced
+        if (Math.abs(leftHeight - rightHeight) > 1)
+            return false;
+
+        return isBalanced(root.left) && isBalanced(root.right);
+
     }
 
-    private int dfs(TreeNode current) {
-        if (current == null)
-            return -1;
+    private static int getHeight(TreeNode node) {
+        if (node == null)
+            return 0;
 
-        int left = 1 + dfs(current.left);
-        int right = 1 + dfs(current.right);
-        result = Math.max(result, (left + right));
-        return Math.max(left, right);
+        // Calculate the height of the left and right subtrees
+        int leftHeight = getHeight(node.left);
+        int rightHeight = getHeight(node.right);
+
+        // Return the maximum height plus 1 for the current node
+        return Math.max(leftHeight, rightHeight) + 1;
     }
 }
