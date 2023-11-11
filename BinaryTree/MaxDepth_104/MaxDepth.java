@@ -1,6 +1,6 @@
-package maxdepth;
+package MaxDepth_104;
 
-public class Maximum_Depth_of_Binary_Tree_104 {
+public class MaxDepth {
 
     public static class TreeNode {
         int val;
