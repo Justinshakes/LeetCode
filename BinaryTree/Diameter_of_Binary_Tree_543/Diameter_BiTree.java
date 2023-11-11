@@ -1,7 +1,6 @@
 package Diameter_of_Binary_Tree_543;
 
-import BalancedBiTree_110.balTree;
-
+// Last Practiced Nov 11th 2023
 public class Diameter_BiTree {
 
     public static class TreeNode {
@@ -30,7 +29,7 @@ public class Diameter_BiTree {
 
         int left = 1 + dfs(current.left);
         int right = 1 + dfs(current.right);
-        
+
         result = Math.max(result, (left + right));
         return Math.max(left, right);
     }
