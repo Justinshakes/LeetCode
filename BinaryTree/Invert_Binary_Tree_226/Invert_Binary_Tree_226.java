@@ -1,3 +1,5 @@
+package Invert_Binary_Tree_226;
+
 public class Invert_Binary_Tree_226 {
 
     // Last practiced Oct 11th
