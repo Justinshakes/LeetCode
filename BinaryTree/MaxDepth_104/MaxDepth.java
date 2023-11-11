@@ -1,5 +1,7 @@
 package MaxDepth_104;
 
+// Last Practiced: Nov 11th 2023
+
 public class MaxDepth {
 
     public static class TreeNode {
