@@ -23,18 +23,11 @@ public class PracticeBiTrees {
         }
     }
 
-    public static TreeNode invertTree(TreeNode root) {
+    public static int maxDepth(TreeNode root) {
         if (root == null)
-            return null;
+            return 0;
 
-        TreeNode left = invertTree(root.left);
-        TreeNode right = invertTree(root.right);
-
-        // swap nodes
-        root.right = left;
-        root.left = right;
-
-        return root;
+        return 1 + Math.max(maxDepth(root.left), maxDepth(root.right));
     }
 
 
