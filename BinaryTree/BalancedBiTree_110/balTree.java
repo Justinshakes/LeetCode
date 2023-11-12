@@ -27,33 +27,33 @@ public class balTree {
         }
     }
         public static void main(String[] args) {
-            // Create a binary tree with the values 3, 9, 20, 15, 7
-            TreeNode root = new TreeNode(3);
-            root.left = new TreeNode(9);
-            root.right = new TreeNode(20);
-            root.right.left = new TreeNode(15);
-            root.right.right = new TreeNode(7);
-
-            // Test the isBalanced method
-            boolean isBalanced = isBalanced(root);
-
-            // Print the result
-            System.out.println("Is the tree balanced? " + isBalanced);
-
-//            // Create a binary tree with the values 1, 2, 2, 3, 3, 4, 4
-//            TreeNode root = new TreeNode(1);
-//            root.left = new TreeNode(2);
-//            root.right = new TreeNode(2);
-//            root.left.left = new TreeNode(3);
-//            root.left.right = new TreeNode(3);
-//            root.left.left.left = new TreeNode(4);
-//            root.left.left.right = new TreeNode(4);
+//            // Create a binary tree with the values 3, 9, 20, 15, 7
+//            TreeNode root = new TreeNode(3);
+//            root.left = new TreeNode(9);
+//            root.right = new TreeNode(20);
+//            root.right.left = new TreeNode(15);
+//            root.right.right = new TreeNode(7);
 //
 //            // Test the isBalanced method
 //            boolean isBalanced = isBalanced(root);
 //
 //            // Print the result
 //            System.out.println("Is the tree balanced? " + isBalanced);
+
+            // Create a binary tree with the values 1, 2, 2, 3, 3, 4, 4
+            TreeNode root = new TreeNode(1);
+            root.left = new TreeNode(2);
+            root.right = new TreeNode(2);
+            root.left.left = new TreeNode(3);
+            root.left.right = new TreeNode(3);
+            root.left.left.left = new TreeNode(4);
+            root.left.left.right = new TreeNode(4);
+
+            // Test the isBalanced method
+            boolean isBalanced = isBalanced(root);
+
+            // Print the result
+            System.out.println("Is the tree balanced? " + isBalanced);
         }
 
     // Solution 1 --------------------------------------------------------------
