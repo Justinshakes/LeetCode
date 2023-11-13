@@ -1,8 +1,6 @@
 package MaxDepth_104;
 
-// Last Practiced: Nov 13th 2023
-
-public class MaxDepth {
+public class MaxDepthPractice {
 
     public static class TreeNode {
         int val;
@@ -26,19 +24,5 @@ public class MaxDepth {
             return 0;
 
         return 1 + Math.max(maxDepth(root.left), maxDepth(root.right));
-    }
-
-    public static void main(String[] args) {
-        // Creating a sample binary tree
-        TreeNode root = new TreeNode(3);
-        root.left = new TreeNode(9);
-        root.right = new TreeNode(20);
-        root.right.left = new TreeNode(15);
-        root.right.right = new TreeNode(7);
-
-
-        // Testing the maxDepth function
-        int depth = maxDepth(root);
-        System.out.println("Maximum Depth of the Binary Tree: " + depth);
     }
 }
