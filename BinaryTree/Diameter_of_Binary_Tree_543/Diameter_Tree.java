@@ -2,7 +2,7 @@ package Diameter_of_Binary_Tree_543;
 
 // Last Practiced Nov 11th 2023
 // Needs practice
-public class Diameter_BiTree {
+public class Diameter_Tree {
 
     public static class TreeNode {
         int val;
