@@ -27,6 +27,7 @@ public class Invert_Binary_Tree_226 {
     }
 
     public static TreeNode invertTree(TreeNode root) {
+        // base case
         if (root == null)
             return null;
 
