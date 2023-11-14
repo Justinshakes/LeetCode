@@ -25,25 +25,26 @@ public class balTree_Practice {
     }
 
     public static boolean isBalanced(TreeNode root) {
-        // If the tree is empty it is balanced
-        if (root == null)
-            return true;
-
-        int leftHeight = getHeight(root.left);
-        int rightHeight = getHeight(root.right);
-
-        return isBalanced(root.left) && isBalanced(root.right);
+        // If the tree is balanced, the height is >= 0; otherwise, it is -1
+        return heightAndBalanced(root) != -1;
     }
 
-    private static int getHeight(TreeNode node) {
+    public static int heightAndBalanced(TreeNode node) {
+        // Base case
         if (node == null)
             return 0;
 
-        // Calculate the height of the left and right subtrees
-        int leftHeight = getHeight(node.left);
-        int rightHeight = getHeight(node.right);
+        int leftHeight = heightAndBalanced(node.left);
+        if (leftHeight == -1)
+            return -1;
 
-        // Return the maximum height plus 1 for the current node
+        int rightHeight = heightAndBalanced(node.right);
+        if (rightHeight == -1)
+            return -1;
+
+        if (Math.abs(leftHeight - rightHeight) > 1)
+            return -1;
+
         return Math.max(leftHeight, rightHeight) + 1;
     }
 }
