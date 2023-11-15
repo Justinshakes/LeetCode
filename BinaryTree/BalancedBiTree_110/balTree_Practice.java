@@ -25,24 +25,23 @@ public class balTree_Practice {
     }
 
     public static boolean isBalanced(TreeNode root) {
-        if(root == null)
-            return true;
-
-        int leftHeight = getHeight(root.left);
-        int rightHeight = getHeight(root.right);
-
-        if (Math.abs(leftHeight - rightHeight) > 1)
-            return false;
-
-        return isBalanced(root.left) && isBalanced(root.right);
+        return heightAndBalanced(root) != -1;
     }
 
-    public static int getHeight(TreeNode node) {
+    private static int heightAndBalanced(TreeNode node) {
         if (node == null)
             return 0;
 
-        int leftHeight = getHeight(node.left);
-        int rightHeight = getHeight(node.right);
+        int leftHeight = heightAndBalanced(node.left);
+        if (leftHeight == -1)
+            return -1;
+
+        int rightHeight = heightAndBalanced(node.right);
+        if (rightHeight == -1)
+            return -1;
+
+        if (Math.abs(leftHeight - rightHeight) > 1)
+            return -1;
 
         return 1 + Math.max(leftHeight, rightHeight);
     }
