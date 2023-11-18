@@ -26,21 +26,22 @@ public class PracticeSameTree {
     }
 
     public static boolean isSameTree(TreeNode p, TreeNode q) {
-        return dfs(q, p);
+        return dfs(p, q);
     }
 
     public static boolean dfs(TreeNode p, TreeNode q) {
-        if ((p == null) && (q == null))
+        if (p == null && q == null)
             return true;
 
-        if ((p == null) || (q == null))
+        if (p == null || q == null)
             return false;
 
         if (p.val != q.val)
             return false;
 
         boolean left = dfs(p.left, q.left);
-        boolean right = dfs(p.right, q.right);
+        boolean right = dfs(p.right, p.left);
+
 
         return left && right;
     }
