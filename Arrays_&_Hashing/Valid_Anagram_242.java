@@ -2,7 +2,7 @@ import java.util.Arrays;
 import java.util.HashMap;
 import java.util.Map;
 
-// Last Practiced: November 5th 2023
+// Last Practiced: November 22nd 2023
 
 public class Valid_Anagram_242 {
 

@@ -1,6 +1,6 @@
 import java.util.*;
 
-// Last Practiced: Nov 5th 2023
+// Last Practiced: Nov 22nd 2023
 public class Group_Anagrams_49 {
     public static List<List<String>> groupAnagrams(String[] strs) {
         HashMap<String, ArrayList<String>> map = new HashMap<>();

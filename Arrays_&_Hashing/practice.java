@@ -2,25 +2,23 @@ import java.util.*;
 
 public class practice {
 
-    public boolean isAnagram(String s, String t) {
-        if (s.length() != t.length())
-            return false;
+    public List<List<String>> groupAnagrams(String[] strs) {
+        HashMap<String, List<String>> map = new HashMap<>();
 
-        HashMap<Character, Integer> map = new HashMap<>();
+        for(String word : strs) {
+            char[] sArray = word.toCharArray();
 
-        for (char c : s.toCharArray()) {
-            map.merge(c, 1, Integer::sum);
+            Arrays.sort(sArray);
+
+            String sortedWord = new String(sArray);
+
+            if (!map.containsKey(sortedWord)) {
+                map.put(sortedWord, new ArrayList<>());
+            }
+
+            map.get(sortedWord).add(word);
         }
 
-        for (char c : t.toCharArray()) {
-            map.merge(c, -1, Integer::sum);
-        }
-
-        for (int i : map.values()) {
-            if (i != 0)
-                return false;
-        }
-
-        return true;
+        return new ArrayList<>(map.values());
     }
 }
