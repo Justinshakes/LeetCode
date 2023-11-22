@@ -2,32 +2,25 @@ import java.util.*;
 
 public class practice {
 
-    public static int[] topKFrequent(int[] nums, int k) {
-        Map<Integer, Integer> count = new HashMap<>();
-        List<Integer>[] bucket = new ArrayList[nums.length + 1];
+    public boolean isAnagram(String s, String t) {
+        if (s.length() != t.length())
+            return false;
 
-        for (int num : nums)
-            count.merge(num, 1, Integer::sum);
+        HashMap<Character, Integer> map = new HashMap<>();
 
-        for (int key : count.keySet()) {
-            int freq = count.get(key);
-            if (bucket[freq] == null)
-                bucket[freq] = new ArrayList<>();
-            bucket[freq].add(key);
+        for (char c : s.toCharArray()) {
+            map.merge(c, 1, Integer::sum);
         }
 
-        int index = 0;
-        int[] result = new int[k];
-        for (int i = nums.length; i >= 0; i--) {
-            if (bucket[i] != null) {
-                for (int val : bucket[i]) {
-                    result[index++] = val;
-
-                    if (index == k)
-                        return result;
-                }
-            }
+        for (char c : t.toCharArray()) {
+            map.merge(c, -1, Integer::sum);
         }
-        return result;
+
+        for (int i : map.values()) {
+            if (i != 0)
+                return false;
+        }
+
+        return true;
     }
 }
