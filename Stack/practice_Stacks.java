@@ -4,22 +4,24 @@ public class practice_Stacks {
 
 
     public static boolean isValidHashMap(String s) {
-        Stack<Character> brackets = new Stack<>();
-        Map<Character, Character> bracketMap = new HashMap<>();
+        Stack<Character> stack = new Stack<>();
+        HashMap<Character, Character> brackets = new HashMap<>();
+        brackets.put(')', '(');
+        brackets.put('}', '{');
+        brackets.put(']', '[');
 
-        bracketMap.put(')', '(');
-        bracketMap.put('}', '{');
-        bracketMap.put(']', '[');
 
-        for (char c : s.toCharArray()) {
-            if (bracketMap.containsKey(c)) {
-                if (!brackets.isEmpty() && bracketMap.get(c) == brackets.peek()) {
-                    brackets.pop();
-                } else return false;
-            } else brackets.push(c);
+        for(char c : s.toCharArray()) {
 
+            if (brackets.containsKey(c)) {
+                if (!stack.isEmpty() && brackets.get(c).equals(stack.peek()))
+                    stack.pop();
+                else
+                    return false;
+            } else
+                stack.push(c);
         }
-        return brackets.isEmpty();
+        return stack.isEmpty();
     }
 
 
