@@ -1,13 +1,14 @@
 import java.util.HashMap;
 import java.util.Map;
 import java.util.Stack;
-// Nov 7th 2023
+// Nov 26th 2023
 public class Valid_Parentheses_20 {
     public static boolean isValid(String s) {
         Stack<Character> stack = new Stack<>();
 
         for (char c : s.toCharArray()) {
-            if (stack.isEmpty() && (c == ')' || c == '}' || c == ']')) return false;
+            if (stack.isEmpty() && (c == ')' || c == '}' || c == ']'))
+                return false;
             else {
                 if (c == ')' && stack.peek() == '(') stack.pop();
                 else if (c == '}' && stack.peek() == '{') stack.pop();
