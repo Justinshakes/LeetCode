@@ -15,6 +15,9 @@ public class Frequent_Elements_347 {
         for (int num : nums)
             count.merge(num, 1, Integer::sum);
 
+        System.out.println(count.keySet());
+        System.out.println(count);
+
         for (int key : count.keySet()) {
             int freq = count.get(key);
             if (bucket[freq] == null)
