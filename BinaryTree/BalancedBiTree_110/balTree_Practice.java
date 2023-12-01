@@ -26,20 +26,23 @@ public class balTree_Practice {
     }
 
     public static boolean isBalanced(TreeNode root) {
-        return heightAndBalanced(root) != -1;
+       return heightAndBalanced(root) != -1;
     }
 
     private static int heightAndBalanced(TreeNode node) {
-        if (node == null) return 0;
+        if (node == null)
+            return 0;
 
         int leftHeight = heightAndBalanced(node.left);
-        if (leftHeight == -1) return -1;
-
+        if (leftHeight == -1)
+            return -1;
 
         int rightHeight = heightAndBalanced(node.right);
-        if (rightHeight == -1) return -1;
+        if (rightHeight == -1)
+            return -1;
 
-        if (Math.abs(leftHeight - rightHeight) > 1) return -1;
+        if (Math.abs(leftHeight - rightHeight) > 1)
+            return -1;
 
         return Math.max(leftHeight, rightHeight) + 1;
     }

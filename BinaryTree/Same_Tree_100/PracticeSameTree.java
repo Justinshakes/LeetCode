@@ -40,8 +40,7 @@ public class PracticeSameTree {
             return false;
 
         boolean left = dfs(p.left, q.left);
-        boolean right = dfs(p.right, p.left);
-
+        boolean right = dfs(p.right, q.right);
 
         return left && right;
     }
