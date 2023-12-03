@@ -1,6 +1,6 @@
 package Invert_Binary_Tree_226;
 
-// Last Practiced: Nov 13th 2023
+// Last Practiced: Dec 2nd 2023
 
 public class Invert_Binary_Tree_226 {
 
