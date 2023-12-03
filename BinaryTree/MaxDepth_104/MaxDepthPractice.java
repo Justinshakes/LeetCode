@@ -23,6 +23,9 @@ public class MaxDepthPractice {
         if (root == null)
             return 0;
 
-        return 1 + Math.max(maxDepth(root.left), maxDepth(root.right));
+        int leftHeight = maxDepth(root.left);
+        int rightHeight = maxDepth(root.right);
+
+        return Math.max(leftHeight, rightHeight) + 1;
     }
 }

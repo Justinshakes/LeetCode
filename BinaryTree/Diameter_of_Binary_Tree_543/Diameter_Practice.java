@@ -24,12 +24,13 @@ public class Diameter_Practice {
 
     private int dfs(TreeNode current) {
         if (current == null)
-            return -1;
+            return 0;
 
-        int left = 1 + dfs(current.left);
-        int right = 1 + dfs(current.right);
+        int leftHeight = dfs(current.left);
+        int rightHeight = dfs(current.right);
 
-        result = Math.max(result, (left + right));
-        return Math.max(left, right);
+        result = Math.max(result, (leftHeight + rightHeight));
+
+        return Math.max(leftHeight, rightHeight) + 1;
     }
 }
